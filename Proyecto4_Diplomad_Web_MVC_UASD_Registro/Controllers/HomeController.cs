@@ -21,13 +21,14 @@ namespace Proyecto4_Diplomad_Web_MVC_UASD_Registro.Controllers
         {
             string nombre = Request.Form["nombre"].ToString();
             string comentarios = Request.Form["comentarios"].ToString();
-            Proyecto4_Diplomad_Web_MVC_UASD_Registro.Models.LibroVisitas libro = new Proyecto4_Diplomad_Web_MVC_UASD_Registro.Models.LibroVisitas();
+            
+            Models.LibroVisitas libro = new Models.LibroVisitas();
             libro.Grabar(nombre, comentarios);
             return View();
         }
         public ActionResult ListadoVisitas()
         {
-            Proyecto4_Diplomad_Web_MVC_UASD_Registro.Models.LibroVisitas libro = new Proyecto4_Diplomad_Web_MVC_UASD_Registro.Models.LibroVisitas();
+            Models.LibroVisitas libro = new Models.LibroVisitas();
             string todo = libro.Leer();
             ViewData["libro"] = todo;
             return View();
